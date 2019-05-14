@@ -5,6 +5,8 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const webpack = require('webpack');
 const dev = process.env.NODE_ENV === 'dev';
 
+// externals: [nodeExternals()],
+
 let config = {
     entry: [
         './src/server.ts'
@@ -21,7 +23,8 @@ let config = {
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
         alias: {
-            "@src": path.resolve(__dirname, 'src')
+            "@src": path.resolve(__dirname, 'src'),
+            "@views": path.resolve(__dirname, '../client/src')
         }
     },
     output: {

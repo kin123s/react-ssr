@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
 
 import RouteComponents from '@views/Route';
 
@@ -17,7 +17,7 @@ const AppHeader = styled.div `
 `;
 
 
-class App extends React.Component {
+class ServerMain extends React.Component {
 
     constructor(props : any) {
         super(props);
@@ -26,7 +26,7 @@ class App extends React.Component {
 
     public render() {
         return (
-            <BrowserRouter>
+            <div>
                 <AppLayout>
                     <AppHeader>
 
@@ -38,10 +38,13 @@ class App extends React.Component {
                         and save to reload.
                     </p>
                 </AppLayout>
-                <Route path="/test" component={RouteComponents} />
-            </BrowserRouter>
+                <Switch>
+                    <Route path="/test" component={RouteComponents} />
+                </Switch>
+                
+            </div>
         );
     }
 }
 
-export default App;
+export default ServerMain;

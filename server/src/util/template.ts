@@ -1,15 +1,22 @@
-export default ({ body , title}) => {
+
+
+export default ({ body , title, styles }) => {
     return `
     <!DOCTYPE html>
     <html>
       <head>
         <title>${title}</title>
-        <link rel="stylesheet" href="/public/bundle.css">
+        ${styles}
+        <style>
+          body {
+            padding : 0;
+            margin : 0;
+          }
+        </style>
         </head>
         
         <body>
         <div id="root">${body}</div>
-        <script src="/public/bundle.js"></script>
       </body>
     </html>
   `;

@@ -14,6 +14,8 @@ if (!NODE_ENV) {
   );
 }
 
+
+
 // https://github.com/bkeepers/dotenv#what-other-env-files-can-i-use
 var dotenvFiles = [
   `${paths.dotenv}.${NODE_ENV}.local`,
@@ -31,7 +33,9 @@ var dotenvFiles = [
 // https://github.com/motdotla/dotenv
 // https://github.com/motdotla/dotenv-expand
 dotenvFiles.forEach(dotenvFile => {
+
   if (fs.existsSync(dotenvFile)) {
+    console.log('test', dotenvFile)
     require('dotenv-expand')(
       require('dotenv').config({
         path: dotenvFile,
@@ -77,6 +81,7 @@ function getClientEnvironment(publicUrl) {
         // This should only be used as an escape hatch. Normally you would put
         // images into the `src` and `import` them in code to get their paths.
         PUBLIC_URL: publicUrl,
+        ROUTE_PATH : process.env.ROUTE_PATH || '/'
       }
     );
   // Stringify all values so we can feed into Webpack DefinePlugin

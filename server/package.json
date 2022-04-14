@@ -40,7 +40,7 @@
     "@types/reactstrap": "^8.0.1",
     "@types/recharts": "^1.1.16",
     "@types/styled-components": "^4.1.15",
-    "async": "^2.6.0",
+    "async": "^3.2.2",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
     "babel-preset-react": "^6.24.1",
